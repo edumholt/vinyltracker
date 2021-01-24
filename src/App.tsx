@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Fetcher } from './Fetcher';
 import './App.css';
 
