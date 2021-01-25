@@ -242,6 +242,11 @@ export class Discojs {
   private fetchOptions: RequestInit;
 
   constructor(options?: DiscojsOptions) {
+    console.log('* * * Discogs constructor * * *');
+    console.log({ options });
+    console.log(isAuthenticatedWithToken(options));
+    console.log(isAuthenticatedWithConsumerKey(options));
+
     const {
       userAgent = DEFAULT_USER_AGENT,
       outputFormat = OutputFormatsEnum.DISCOGS,
@@ -275,6 +280,7 @@ export class Discojs {
         signature_method: 'PLAINTEXT',
         version: '1.0',
       });
+      console.log({ oAuth });
 
       this.setAuthorizationHeader = (url?: string, method?: HTTPVerbsEnum) => {
         if (!url || !method) return '';
@@ -340,9 +346,14 @@ export class Discojs {
     };
 
     // Set Authorization header.
-    if (this.setAuthorizationHeader)
+    if (this.setAuthorizationHeader) {
+      console.log('* * * setAuthorizationHeader * * *');
       this.fetchHeaders.set('Authorization', this.setAuthorizationHeader(uri, method || HTTPVerbsEnum.GET));
-
+      this.fetchHeaders.forEach((header) => {
+        console.log(header);
+        console.log('');
+      });
+    }
     const clonedHeaders = new Map(this.fetchHeaders);
 
     if (data) {
