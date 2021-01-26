@@ -18,6 +18,6 @@ export const SearchEntityIO = t.intersection([
     cover_image: t.string,
     master_id: t.union([t.number, t.null]),
     master_url: t.union([t.string, t.null]),
-    uri: t.string,
-  }),
+    uri: t.string
+  })
 ]);

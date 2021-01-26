@@ -1,6 +1,6 @@
-import * as t from 'io-ts'
+import * as t from 'io-ts';
 
-import { ResourceURLIO } from './commons'
+import { ResourceURLIO } from './commons';
 
 /**
  * @internal
@@ -10,25 +10,25 @@ export const FolderIO = t.intersection([
   t.type({
     id: t.Integer,
     count: t.Integer,
-    name: t.string,
-  }),
-])
+    name: t.string
+  })
+]);
 
 /**
  * @internal
  */
 const CustomFieldDropdownIO = t.type({
   type: t.literal('dropdown'),
-  options: t.array(t.string),
-})
+  options: t.array(t.string)
+});
 
 /**
  * @internal
  */
 const CustomFieldTextAreaIO = t.type({
   type: t.literal('textarea'),
-  lines: t.Integer,
-})
+  lines: t.Integer
+});
 
 /**
  * @internal
@@ -39,9 +39,9 @@ export const CustomFieldIO = t.intersection([
     id: t.Integer,
     name: t.string,
     position: t.Integer,
-    public: t.boolean,
-  }),
-])
+    public: t.boolean
+  })
+]);
 
 /**
  * @internal
@@ -49,7 +49,7 @@ export const CustomFieldIO = t.intersection([
 export const CollectionValueIO = t.type({
   maximum: t.string,
   median: t.string,
-  minimum: t.string,
-})
+  minimum: t.string
+});
 
-export type Folder = t.TypeOf<typeof FolderIO>
+export type Folder = t.TypeOf<typeof FolderIO>;

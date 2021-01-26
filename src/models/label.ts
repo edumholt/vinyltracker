@@ -11,8 +11,8 @@ const SubLabelIO = t.intersection([
   ResourceURLIO,
   t.type({
     id: t.Integer,
-    name: t.string,
-  }),
+    name: t.string
+  })
 ]);
 
 /**
@@ -30,8 +30,8 @@ export const LabelIO = t.intersection([
     urls: t.array(t.string),
     releases_url: t.string,
     images: t.array(ImageIO),
-    uri: t.string,
-  }),
+    uri: t.string
+  })
 ]);
 
 export type Label = t.TypeOf<typeof LabelIO>;

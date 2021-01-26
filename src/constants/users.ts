@@ -6,5 +6,5 @@ export enum UserSortEnum {
   FORMAT = 'format',
   RATING = 'rating',
   YEAR = 'year',
-  ADDED = 'added',
+  ADDED = 'added'
 }

@@ -20,8 +20,8 @@ const DataQualityRuntimeEnum = makeEnumIOType(DataQualityEnum);
 const ContributorIO = t.intersection([
   ResourceURLIO,
   t.type({
-    username: t.string,
-  }),
+    username: t.string
+  })
 ]);
 
 /**
@@ -29,7 +29,7 @@ const ContributorIO = t.intersection([
  */
 export const CommunityReleaseRatingIO = t.type({
   count: t.Integer,
-  average: t.number,
+  average: t.number
 });
 
 /**
@@ -43,8 +43,8 @@ export const ReleaseArtistIO = t.intersection([
     anv: t.string,
     join: t.string,
     role: t.string,
-    tracks: t.string,
-  }),
+    tracks: t.string
+  })
 ]);
 
 /**
@@ -52,7 +52,7 @@ export const ReleaseArtistIO = t.intersection([
  */
 const ReleaseFormatIO = t.type({
   name: t.string,
-  qty: t.string,
+  qty: t.string
 });
 
 /**
@@ -65,8 +65,8 @@ const ReleaseEntityIO = t.intersection([
     name: t.string,
     entity_type: t.string,
     entity_type_name: t.string,
-    catno: t.string,
-  }),
+    catno: t.string
+  })
 ]);
 
 /**
@@ -74,7 +74,7 @@ const ReleaseEntityIO = t.intersection([
  */
 const ReleaseIdentifierIO = t.type({
   type: t.string,
-  value: t.string,
+  value: t.string
 });
 
 /**
@@ -84,7 +84,7 @@ export const TrackIO = t.type({
   type_: t.string,
   title: t.string,
   position: t.string,
-  duration: t.string,
+  duration: t.string
 });
 
 /**
@@ -100,8 +100,8 @@ export const ReleaseBasicInfoIO = t.intersection([
     labels: t.array(ReleaseEntityIO),
     year: t.Integer,
     cover_image: t.string,
-    thumb: t.string,
-  }),
+    thumb: t.string
+  })
 ]);
 
 /**
@@ -113,8 +113,8 @@ export const ReleaseMinimalInfoIO = t.intersection([
     genres: t.array(t.string),
     styles: t.array(t.string),
     master_id: t.number,
-    master_url: t.string,
-  }),
+    master_url: t.string
+  })
 ]);
 
 /**
@@ -135,7 +135,7 @@ export const ReleaseIO = t.intersection([
     master_url: t.string,
     estimated_weight: t.number,
     images: t.array(ImageIO),
-    videos: t.array(VideoIO),
+    videos: t.array(VideoIO)
   }),
   t.type({
     id: t.Integer,
@@ -162,10 +162,10 @@ export const ReleaseIO = t.intersection([
       submitter: ContributorIO,
       contributors: t.array(ContributorIO),
       data_quality: DataQualityRuntimeEnum,
-      status: CommunityStatusesRuntimeEnum,
+      status: CommunityStatusesRuntimeEnum
     }),
-    uri: t.string,
-  }),
+    uri: t.string
+  })
 ]);
 
 export type Release = t.TypeOf<typeof ReleaseIO>;
@@ -182,10 +182,10 @@ export const ArtistReleaseIO = t.intersection([
     year: t.number,
     stats: t.type({
       user: StatNumberIO,
-      community: StatNumberIO,
+      community: StatNumberIO
     }),
-    thumb: t.string,
-  }),
+    thumb: t.string
+  })
 ]);
 
 /**
@@ -196,6 +196,6 @@ export const LabelReleaseIO = t.intersection([
   t.type({
     format: t.string,
     catno: t.string,
-    status: CommunityStatusesRuntimeEnum,
-  }),
+    status: CommunityStatusesRuntimeEnum
+  })
 ]);

@@ -26,8 +26,8 @@ export const MasterIO = t.intersection([
     data_quality: makeEnumIOType(DataQualityEnum),
     images: t.array(ImageIO),
     videos: t.array(VideoIO),
-    uri: t.string,
-  }),
+    uri: t.string
+  })
 ]);
 
 export type Master = t.TypeOf<typeof MasterIO>;
@@ -49,8 +49,8 @@ export const MasterVersionIO = t.intersection([
     status: makeEnumIOType(CommunityStatusesEnum),
     stats: t.type({
       user: StatNumberIO,
-      community: StatNumberIO,
+      community: StatNumberIO
     }),
-    thumb: t.string,
-  }),
+    thumb: t.string
+  })
 ]);

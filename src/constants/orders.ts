@@ -8,7 +8,7 @@ export enum EditOrderStatusesEnum {
   REFUND_SENT = 'Refund Sent',
   CANCELLED_NON_PAYING_BUYER = 'Cancelled (Non-Paying Buyer)',
   CANCELLED_ITEM_UNAVAILABLE = 'Cancelled (Item Unavailable)',
-  CANCELLED_PER_BUYER_REQUEST = "Cancelled (Per Buyer's Request)",
+  CANCELLED_PER_BUYER_REQUEST = "Cancelled (Per Buyer's Request)"
 }
 
 export enum OrderStatusesEnum {
@@ -26,7 +26,7 @@ export enum OrderStatusesEnum {
   CANCELLED_NON_PAYING_BUYER = 'Cancelled (Non-Paying Buyer)',
   CANCELLED_ITEM_UNAVAILABLE = 'Cancelled (Item Unavailable)',
   CANCELLED_PER_BUYER_REQUEST = "Cancelled (Per Buyer's Request)",
-  CANCELLED_REFUND_RECEIVED = 'Cancelled (Refund Received)',
+  CANCELLED_REFUND_RECEIVED = 'Cancelled (Refund Received)'
 }
 
 export enum OrderSortEnum {
@@ -34,7 +34,7 @@ export enum OrderSortEnum {
   BUYER = 'buyer',
   CREATED = 'created',
   STATUS = 'status',
-  LAST_ACTIVITY = 'last_activity',
+  LAST_ACTIVITY = 'last_activity'
 }
 
 export enum OrderMessageTypesEnum {
@@ -42,5 +42,5 @@ export enum OrderMessageTypesEnum {
   MESSAGE = 'message',
   SHIPPING = 'shipping',
   REFUND_SENT = 'refund_sent',
-  REFUND_RECEIVED = 'refund_received',
+  REFUND_RECEIVED = 'refund_received'
 }

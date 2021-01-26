@@ -6,7 +6,7 @@ export enum ReleaseConditionsEnum {
   GOOD_PLUS = 'Good Plus (G+)',
   GOOD = 'Good (G)',
   FAIR = 'Fair (F)',
-  POOR = 'Poor (P)',
+  POOR = 'Poor (P)'
 }
 
 export enum SleeveConditionsEnum {
@@ -20,5 +20,5 @@ export enum SleeveConditionsEnum {
   POOR = 'Poor (P)',
   GENERIC = 'Generic',
   NOT_GRADED = 'Not Graded',
-  NO_COVER = 'No Cover',
+  NO_COVER = 'No Cover'
 }

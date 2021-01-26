@@ -15,7 +15,7 @@ import {
   ReleaseSortEnum,
   SearchTypeEnum,
   SleeveConditionsEnum,
-  UserSortEnum,
+  UserSortEnum
 } from './constants';
 
 import {
@@ -27,7 +27,7 @@ import {
   Pagination,
   sortBy,
   SortOptions,
-  transformData,
+  transformData
 } from './utils';
 
 import {
@@ -66,7 +66,7 @@ import {
   UserListsResponse,
   UserProfileResponse,
   UserSubmissionsResponse,
-  WantlistResponse,
+  WantlistResponse
 } from './models';
 
 /**
@@ -129,7 +129,7 @@ type LimiterOptions = {
  * @todo Edit types depending on chosen output format.
  */
 enum OutputFormatsEnum {
-  DISCOGS = 'discogs',
+  DISCOGS = 'discogs'
   // PLAIN = 'plaintext',
   // HTML = 'html',
 }
@@ -253,7 +253,7 @@ export class Discojs {
       requestLimit = 25,
       requestLimitAuth = 60,
       requestLimitInterval = 60 * 1000,
-      fetchOptions = {},
+      fetchOptions = {}
     } = options || {};
 
     this.userAgent = userAgent;
@@ -262,14 +262,14 @@ export class Discojs {
 
     this.limiter = createLimiter({
       maxRequests: isAuthenticated(options) ? requestLimitAuth : requestLimit,
-      requestLimitInterval,
+      requestLimitInterval
     });
 
     this.fetchOptions = fetchOptions;
 
     this.fetchHeaders = new Headers({
       Accept: `application/vnd.discogs.${API_VERSION}.${this.outputFormat}+json`,
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     });
 
     if (isAuthenticatedWithToken(options)) this.setAuthorizationHeader = () => `Discogs token=${options.userToken}`;
@@ -278,7 +278,7 @@ export class Discojs {
       const oAuth = new OAuth({
         consumer: { key: options.consumerKey, secret: options.consumerSecret },
         signature_method: 'PLAINTEXT',
-        version: '1.0',
+        version: '1.0'
       });
       console.log({ oAuth });
 
@@ -342,14 +342,14 @@ export class Discojs {
 
     const options = {
       ...this.fetchOptions,
-      method: method || HTTPVerbsEnum.GET,
+      method: method || HTTPVerbsEnum.GET
     };
 
     // Set Authorization header.
     if (this.setAuthorizationHeader) {
       console.log('* * * setAuthorizationHeader * * *');
       this.fetchHeaders.set('Authorization', this.setAuthorizationHeader(uri, method || HTTPVerbsEnum.GET));
-      this.fetchHeaders.forEach((header) => {
+      this.fetchHeaders.forEach(header => {
         console.log(header);
         console.log('');
       });
@@ -470,7 +470,7 @@ export class Discojs {
   async getContributionsForUser(username: string, sort?: SortOptions<UserSortEnum>, pagination?: Pagination) {
     return this.fetch<UserContributionsResponse>(`/users/${username}/contributions`, {
       ...sortBy(UserSortEnum.ADDED, sort),
-      ...paginate(pagination),
+      ...paginate(pagination)
     });
   }
 
@@ -564,7 +564,7 @@ export class Discojs {
   async editFolder(folderId: FolderIdsEnum | number, name: string) {
     const username = await this.getUsername();
     return this.fetch<Folder>(`/users/${username}/collection/folders/${folderId}`, {}, HTTPVerbsEnum.POST, {
-      name,
+      name
     });
   }
 
@@ -635,7 +635,7 @@ export class Discojs {
   ) {
     return this.fetch<FolderReleasesResponse>(`/users/${username}/collection/folders/${folderId}/releases`, {
       ...sortBy(UserSortEnum.ADDED, sort),
-      ...paginate(pagination),
+      ...paginate(pagination)
     });
   }
 
@@ -980,7 +980,7 @@ export class Discojs {
   async updateReleaseRating(releaseId: number, rating: RatingValues) {
     const username = await this.getUsername();
     return this.fetch<ReleaseRatingResponse>(`/releases/${releaseId}/rating/${username}`, {}, HTTPVerbsEnum.PUT, {
-      rating,
+      rating
     });
   }
 
@@ -1081,7 +1081,7 @@ export class Discojs {
   async getArtistReleases(artistId: number, sort?: SortOptions<ReleaseSortEnum>, pagination?: Pagination) {
     return this.fetch<ArtistReleasesResponse>(`/artists/${artistId}/releases`, {
       ...sortBy(ReleaseSortEnum.YEAR, sort),
-      ...paginate(pagination),
+      ...paginate(pagination)
     });
   }
 
@@ -1143,7 +1143,7 @@ export class Discojs {
     return this.fetch<InventoryResponse>(`/users/${username}/inventory`, {
       status,
       ...sortBy(InventorySortEnum.LISTED, sort),
-      ...paginate(pagination),
+      ...paginate(pagination)
     });
   }
 
@@ -1257,7 +1257,7 @@ export class Discojs {
       status,
       archived,
       ...sortBy(OrderSortEnum.ID, sort),
-      ...paginate(pagination),
+      ...paginate(pagination)
     });
   }
 
@@ -1289,7 +1289,7 @@ export class Discojs {
   async sendOrderMessage(orderId: number, message?: string, status?: OrderStatusesEnum) {
     return this.fetch<OrderMessage>(`/marketplace/orders/${orderId}/messages`, {}, HTTPVerbsEnum.POST, {
       message,
-      status,
+      status
     });
   }
 

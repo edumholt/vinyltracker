@@ -8,7 +8,7 @@ import {
   ListingStatusesEnum,
   OrderMessageTypesEnum,
   ReleaseConditionsEnum,
-  SleeveConditionsEnum,
+  SleeveConditionsEnum
 } from '../constants';
 
 /**
@@ -46,12 +46,12 @@ const SellerIO = t.intersection([
     stats: t.type({
       rating: t.string,
       stars: t.number,
-      total: t.Integer,
+      total: t.Integer
     }),
     url: t.string,
     html_url: t.string,
-    is_mp2020_seller: t.boolean,
-  }),
+    is_mp2020_seller: t.boolean
+  })
 ]);
 
 /**
@@ -61,7 +61,7 @@ const OriginalPriceIO = t.partial({
   value: t.number,
   curr_id: t.Integer,
   curr_abbr: makeEnumIOType(CurrenciesEnum),
-  formatted: t.string,
+  formatted: t.string
 });
 
 /**
@@ -86,24 +86,24 @@ export const ListingIO = t.intersection([
         thumbnail: t.string,
         stats: t.type({
           user: StatNumberIO,
-          community: StatNumberIO,
-        }),
-      }),
+          community: StatNumberIO
+        })
+      })
     ]),
     seller: SellerIO,
     price: ValueWithCurrencyIO,
     original_price: t.intersection([
       OriginalPriceIO,
       t.partial({
-        converted: OriginalPriceIO,
-      }),
+        converted: OriginalPriceIO
+      })
     ]),
     shipping_price: ValueWithCurrencyIO,
     original_shipping_price: t.intersection([
       OriginalPriceIO,
       t.partial({
-        converted: OriginalPriceIO,
-      }),
+        converted: OriginalPriceIO
+      })
     ]),
     allow_offers: t.boolean,
     ships_from: t.string,
@@ -112,11 +112,11 @@ export const ListingIO = t.intersection([
     sleeve_condition: SleeveConditionsRuntimeEnum,
     comments: t.string,
     audio: t.boolean,
-    uri: t.string,
+    uri: t.string
   }),
   t.partial({
-    in_cart: t.boolean,
-  }),
+    in_cart: t.boolean
+  })
 ]);
 
 /**
@@ -126,11 +126,11 @@ const OrderItemIO = t.type({
   id: t.Integer,
   release: t.type({
     id: t.Integer,
-    description: t.string,
+    description: t.string
   }),
   price: ValueWithCurrencyIO,
   media_condition: ReleaseConditionsRuntimeEnum,
-  sleeve_condition: SleeveConditionsRuntimeEnum,
+  sleeve_condition: SleeveConditionsRuntimeEnum
 });
 
 /**
@@ -146,8 +146,8 @@ export const OrderIO = t.intersection([
     shipping: t.intersection([
       ValueWithCurrencyIO,
       t.type({
-        method: t.string,
-      }),
+        method: t.string
+      })
     ]),
     shipping_address: t.string,
     additional_instructions: t.string,
@@ -157,22 +157,22 @@ export const OrderIO = t.intersection([
       ResourceURLIO,
       t.type({
         id: t.Integer,
-        username: t.string,
-      }),
+        username: t.string
+      })
     ]),
     buyer: t.intersection([
       ResourceURLIO,
       t.type({
         id: t.Integer,
-        username: t.string,
-      }),
+        username: t.string
+      })
     ]),
     archived: t.boolean,
     created: t.string,
     last_activity: t.string,
     messages_url: t.string,
-    uri: t.string,
-  }),
+    uri: t.string
+  })
 ]);
 
 /**
@@ -184,9 +184,9 @@ const OrderMessageStatusIO = t.type({
   actor: t.intersection([
     ResourceURLIO,
     t.type({
-      username: t.string,
-    }),
-  ]),
+      username: t.string
+    })
+  ])
 });
 
 /**
@@ -199,9 +199,9 @@ const OrderMessageMessageIO = t.type({
     t.type({
       id: t.Integer,
       username: t.string,
-      avatar_url: t.string,
-    }),
-  ]),
+      avatar_url: t.string
+    })
+  ])
 });
 
 /**
@@ -210,7 +210,7 @@ const OrderMessageMessageIO = t.type({
 const OrderMessageShippingIO = t.type({
   // type: t.literal(OrderMessageTypesEnum.SHIPPING),
   original: t.number,
-  new: t.number,
+  new: t.number
 });
 
 /**
@@ -223,10 +223,10 @@ const OrderMessageRefundIO = t.type({
     order: t.intersection([
       ResourceURLIO,
       t.type({
-        id: t.Integer,
-      }),
-    ]),
-  }),
+        id: t.Integer
+      })
+    ])
+  })
 });
 
 /**
@@ -241,14 +241,14 @@ export const OrderMessageIO = t.intersection([
     order: t.intersection([
       ResourceURLIO,
       t.type({
-        id: t.Integer,
-      }),
-    ]),
+        id: t.Integer
+      })
+    ])
   }),
   OrderMessageStatusIO,
   OrderMessageMessageIO,
   OrderMessageShippingIO,
-  OrderMessageRefundIO,
+  OrderMessageRefundIO
 ]);
 
 export type Fee = t.TypeOf<typeof FeeIO>;

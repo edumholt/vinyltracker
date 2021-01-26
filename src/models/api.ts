@@ -12,7 +12,7 @@ import {
   LabelReleaseIO,
   ReleaseBasicInfoIO,
   ReleaseMinimalInfoIO,
-  ReleaseIO,
+  ReleaseIO
 } from './release';
 import { SearchEntityIO } from './search';
 import { IdentityIO, UserIO, UserListIO, UserListItemIO } from './user';
@@ -34,8 +34,8 @@ export const UserSubmissionsResponseIO = t.type({
   submissions: t.partial({
     artists: t.array(UserSubmissionArtistIO),
     labels: t.array(LabelIO),
-    releases: t.array(ReleaseIO),
-  }),
+    releases: t.array(ReleaseIO)
+  })
 });
 export type UserSubmissionsResponse = t.TypeOf<typeof UserSubmissionsResponseIO>;
 
@@ -44,7 +44,7 @@ export type UserSubmissionsResponse = t.TypeOf<typeof UserSubmissionsResponseIO>
  */
 export const UserContributionsResponseIO = t.type({
   pagination: PaginationIO,
-  contributions: t.array(ReleaseIO),
+  contributions: t.array(ReleaseIO)
 });
 export type UserContributionsResponse = t.TypeOf<typeof UserContributionsResponseIO>;
 
@@ -52,7 +52,7 @@ export type UserContributionsResponse = t.TypeOf<typeof UserContributionsRespons
  * @internal
  */
 export const FoldersResponseIO = t.type({
-  folders: t.array(FolderIO),
+  folders: t.array(FolderIO)
 });
 export type FoldersResponse = t.TypeOf<typeof FoldersResponseIO>;
 
@@ -67,9 +67,9 @@ export const FolderReleasesResponseIO = t.type({
       instance_id: t.Integer,
       rating: t.Integer,
       date_added: t.string,
-      basic_information: ReleaseMinimalInfoIO,
+      basic_information: ReleaseMinimalInfoIO
     })
-  ),
+  )
 });
 export type FolderReleasesResponse = t.TypeOf<typeof FolderReleasesResponseIO>;
 
@@ -79,8 +79,8 @@ export type FolderReleasesResponse = t.TypeOf<typeof FolderReleasesResponseIO>;
 export const AddToFolderResponseIO = t.intersection([
   ResourceURLIO,
   t.type({
-    instance_id: t.Integer,
-  }),
+    instance_id: t.Integer
+  })
 ]);
 export type AddToFolderResponse = t.TypeOf<typeof AddToFolderResponseIO>;
 
@@ -88,7 +88,7 @@ export type AddToFolderResponse = t.TypeOf<typeof AddToFolderResponseIO>;
  * @internal
  */
 export const CustomFieldsResponseIO = t.type({
-  fields: t.array(CustomFieldIO),
+  fields: t.array(CustomFieldIO)
 });
 export type CustomFieldsResponse = t.TypeOf<typeof CustomFieldsResponseIO>;
 
@@ -102,9 +102,9 @@ export const WantlistResponseIO = t.type({
   wants: t.array(
     t.type({
       rating: t.number,
-      basic_information: ReleaseBasicInfoIO,
+      basic_information: ReleaseBasicInfoIO
     })
-  ),
+  )
 });
 export type WantlistResponse = t.TypeOf<typeof WantlistResponseIO>;
 
@@ -117,8 +117,8 @@ export const AddToWantlistResponseIO = t.intersection([
     id: t.Integer,
     rating: t.number,
     notes: t.string,
-    basic_information: ReleaseBasicInfoIO,
-  }),
+    basic_information: ReleaseBasicInfoIO
+  })
 ]);
 export type AddToWantlistResponse = t.TypeOf<typeof AddToWantlistResponseIO>;
 
@@ -127,7 +127,7 @@ export type AddToWantlistResponse = t.TypeOf<typeof AddToWantlistResponseIO>;
  */
 export const UserListsResponseIO = t.type({
   pagination: PaginationIO,
-  lists: t.array(UserListIO),
+  lists: t.array(UserListIO)
 });
 export type UserListsResponse = t.TypeOf<typeof UserListsResponseIO>;
 
@@ -135,7 +135,7 @@ export type UserListsResponse = t.TypeOf<typeof UserListsResponseIO>;
  * @internal
  */
 export const UserListItemsResponseIO = t.type({
-  items: t.array(UserListItemIO),
+  items: t.array(UserListItemIO)
 });
 export type UserListItemsResponse = t.TypeOf<typeof UserListItemsResponseIO>;
 
@@ -144,7 +144,7 @@ export type UserListItemsResponse = t.TypeOf<typeof UserListItemsResponseIO>;
  */
 export const SearchResponseIO = t.type({
   pagination: PaginationIO,
-  results: t.array(SearchEntityIO),
+  results: t.array(SearchEntityIO)
 });
 export type SearchResponse = t.TypeOf<typeof SearchResponseIO>;
 
@@ -153,7 +153,7 @@ export type SearchResponse = t.TypeOf<typeof SearchResponseIO>;
  */
 export const ArtistReleasesResponseIO = t.type({
   pagination: PaginationIO,
-  releases: t.array(ArtistReleaseIO),
+  releases: t.array(ArtistReleaseIO)
 });
 export type ArtistReleasesResponse = t.TypeOf<typeof ArtistReleasesResponseIO>;
 
@@ -162,7 +162,7 @@ export type ArtistReleasesResponse = t.TypeOf<typeof ArtistReleasesResponseIO>;
  */
 export const LabelReleasesResponseIO = t.type({
   pagination: PaginationIO,
-  releases: t.array(LabelReleaseIO),
+  releases: t.array(LabelReleaseIO)
 });
 export type LabelReleasesResponse = t.TypeOf<typeof LabelReleasesResponseIO>;
 
@@ -172,7 +172,7 @@ export type LabelReleasesResponse = t.TypeOf<typeof LabelReleasesResponseIO>;
 export const ReleaseRatingResponseIO = t.type({
   release_id: t.Integer,
   username: t.string,
-  rating: t.Integer,
+  rating: t.Integer
 });
 export type ReleaseRatingResponse = t.TypeOf<typeof ReleaseRatingResponseIO>;
 
@@ -181,7 +181,7 @@ export type ReleaseRatingResponse = t.TypeOf<typeof ReleaseRatingResponseIO>;
  */
 export const CommunityReleaseRatingResponseIO = t.type({
   release_id: t.Integer,
-  rating: CommunityReleaseRatingIO,
+  rating: CommunityReleaseRatingIO
 });
 export type CommunityReleaseRatingResponse = t.TypeOf<typeof CommunityReleaseRatingResponseIO>;
 
@@ -190,7 +190,7 @@ export type CommunityReleaseRatingResponse = t.TypeOf<typeof CommunityReleaseRat
  */
 export const MasterVersionsResponseIO = t.type({
   pagination: PaginationIO,
-  versions: t.array(MasterVersionIO),
+  versions: t.array(MasterVersionIO)
 });
 export type MasterVersionsResponse = t.TypeOf<typeof MasterVersionsResponseIO>;
 
@@ -199,7 +199,7 @@ export type MasterVersionsResponse = t.TypeOf<typeof MasterVersionsResponseIO>;
  */
 export const InventoryResponseIO = t.type({
   pagination: PaginationIO,
-  listings: t.array(ListingIO),
+  listings: t.array(ListingIO)
 });
 export type InventoryResponse = t.TypeOf<typeof InventoryResponseIO>;
 
@@ -209,8 +209,8 @@ export type InventoryResponse = t.TypeOf<typeof InventoryResponseIO>;
 export const CreateListingResponseIO = t.intersection([
   ResourceURLIO,
   t.type({
-    listing_id: t.Integer,
-  }),
+    listing_id: t.Integer
+  })
 ]);
 export type CreateListingResponse = t.TypeOf<typeof CreateListingResponseIO>;
 
@@ -219,7 +219,7 @@ export type CreateListingResponse = t.TypeOf<typeof CreateListingResponseIO>;
  */
 export const OrdersResponseIO = t.type({
   pagination: PaginationIO,
-  orders: t.array(OrderIO),
+  orders: t.array(OrderIO)
 });
 export interface OrdersResponse extends t.TypeOf<typeof OrdersResponseIO> {}
 
@@ -228,7 +228,7 @@ export interface OrdersResponse extends t.TypeOf<typeof OrdersResponseIO> {}
  */
 export const OrderMessagesResponseIO = t.type({
   pagination: PaginationIO,
-  messages: t.array(OrderMessageIO),
+  messages: t.array(OrderMessageIO)
 });
 export type OrderMessagesResponse = t.TypeOf<typeof OrderMessagesResponseIO>;
 
@@ -239,7 +239,7 @@ export const PriceSuggestionsResponseIO = t.partial(
   Object.values(ReleaseConditionsEnum).reduce(
     (acc, condition) => ({
       ...acc,
-      [condition]: ValueWithCurrencyIO,
+      [condition]: ValueWithCurrencyIO
     }),
     {} as Record<ReleaseConditionsEnum, typeof ValueWithCurrencyIO>
   )
@@ -252,6 +252,6 @@ export type PriceSuggestionsResponse = t.TypeOf<typeof PriceSuggestionsResponseI
 export const MarketplaceStatisticsResponseIO = t.type({
   blocked_from_sale: t.boolean,
   lowest_price: t.union([ValueWithCurrencyIO, t.null]),
-  num_for_sale: t.union([t.Integer, t.null]),
+  num_for_sale: t.union([t.Integer, t.null])
 });
 export type MarketplaceStatisticsResponse = t.TypeOf<typeof MarketplaceStatisticsResponseIO>;

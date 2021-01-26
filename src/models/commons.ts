@@ -15,15 +15,15 @@ export const PaginationIO = t.type({
     first: t.union([t.string, t.undefined]),
     prev: t.union([t.string, t.undefined]),
     next: t.union([t.string, t.undefined]),
-    last: t.union([t.string, t.undefined]),
-  }),
+    last: t.union([t.string, t.undefined])
+  })
 });
 
 /**
  * @internal
  */
 export const ResourceURLIO = t.type({
-  resource_url: t.string,
+  resource_url: t.string
 });
 
 /**
@@ -36,8 +36,8 @@ export const ImageIO = t.intersection([
     width: t.Integer,
     height: t.Integer,
     uri: t.string,
-    uri150: t.string,
-  }),
+    uri150: t.string
+  })
 ]);
 
 /**
@@ -48,7 +48,7 @@ export const VideoIO = t.type({
   description: t.string,
   duration: t.Integer,
   embed: t.boolean,
-  uri: t.string,
+  uri: t.string
 });
 
 /**
@@ -56,7 +56,7 @@ export const VideoIO = t.type({
  */
 export const ValueWithCurrencyIO = t.partial({
   value: t.number,
-  currency: makeEnumIOType(CurrenciesEnum),
+  currency: makeEnumIOType(CurrenciesEnum)
 });
 
 /**
@@ -64,7 +64,7 @@ export const ValueWithCurrencyIO = t.partial({
  */
 export const StatNumberIO = t.type({
   in_collection: t.number,
-  in_wantlist: t.number,
+  in_wantlist: t.number
 });
 
 /**
@@ -72,5 +72,5 @@ export const StatNumberIO = t.type({
  */
 export const StatBooleanIO = t.type({
   in_collection: t.boolean,
-  in_wantlist: t.boolean,
+  in_wantlist: t.boolean
 });

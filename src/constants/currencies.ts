@@ -10,5 +10,5 @@ export enum CurrenciesEnum {
   BRL = 'BRL',
   NZD = 'NZD',
   SEK = 'SEK',
-  ZAR = 'ZAR',
+  ZAR = 'ZAR'
 }

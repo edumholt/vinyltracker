@@ -1,0 +1,11 @@
+root = true
+
+[*.{css,scss,js,jsx,json,ts,tsx}]
+# These settings are picked up by Prettier
+indent_style = space
+indent_size = 2
+max_line_length = 120
+quote_type = single
+# These settings are ignored by Prettier
+trim_trailing_whitespace = true
+insert_final_newline = true

@@ -12,8 +12,8 @@ const MemberIO = t.intersection([
   t.type({
     id: t.Integer,
     name: t.string,
-    active: t.boolean,
-  }),
+    active: t.boolean
+  })
 ]);
 
 /**
@@ -28,11 +28,11 @@ const ArtistBaseIO = t.intersection([
     namevariations: t.array(t.string),
     releases_url: t.string,
     images: t.array(ImageIO),
-    uri: t.string,
+    uri: t.string
   }),
   t.partial({
-    urls: t.array(t.string),
-  }),
+    urls: t.array(t.string)
+  })
 ]);
 
 /**
@@ -41,8 +41,8 @@ const ArtistBaseIO = t.intersection([
 export const ArtistIO = t.intersection([
   ArtistBaseIO,
   t.partial({
-    members: t.array(MemberIO),
-  }),
+    members: t.array(MemberIO)
+  })
 ]);
 
 export type Artist = t.TypeOf<typeof ArtistIO>;
@@ -53,6 +53,6 @@ export type Artist = t.TypeOf<typeof ArtistIO>;
 export const UserSubmissionArtistIO = t.intersection([
   ArtistBaseIO,
   t.partial({
-    members: t.union([t.readonlyArray(t.string), t.string]),
-  }),
+    members: t.union([t.readonlyArray(t.string), t.string])
+  })
 ]);

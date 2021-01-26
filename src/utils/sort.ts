@@ -1,11 +1,11 @@
 export enum SortOrdersEnum {
   ASC = 'asc',
-  DESC = 'desc',
+  DESC = 'desc'
 }
 
 export interface SortOptions<T> {
-  by?: T
-  order?: SortOrdersEnum
+  by?: T;
+  order?: SortOrdersEnum;
 }
 
 /**
@@ -14,10 +14,10 @@ export interface SortOptions<T> {
  * @internal
  */
 export function sortBy<T>(defaultSortBy: T, options?: SortOptions<T>) {
-  const { by = defaultSortBy, order = SortOrdersEnum.ASC } = options || {}
+  const { by = defaultSortBy, order = SortOrdersEnum.ASC } = options || {};
 
   return {
     sort: by,
-    sort_order: order,
-  }
+    sort_order: order
+  };
 }

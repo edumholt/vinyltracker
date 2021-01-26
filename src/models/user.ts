@@ -16,8 +16,8 @@ export const UserListIO = t.intersection([
     public: t.boolean,
     date_added: t.string,
     date_changed: t.string,
-    uri: t.string,
-  }),
+    uri: t.string
+  })
 ]);
 
 /**
@@ -31,8 +31,8 @@ export const UserListItemIO = t.intersection([
     display_title: t.string,
     comment: t.string,
     uri: t.string,
-    image_url: t.string,
-  }),
+    image_url: t.string
+  })
 ]);
 
 /**
@@ -43,8 +43,8 @@ export const IdentityIO = t.intersection([
   t.type({
     id: t.Integer,
     username: t.string,
-    consumer_name: t.string,
-  }),
+    consumer_name: t.string
+  })
 ]);
 
 /**
@@ -55,7 +55,7 @@ export const UserIO = t.intersection([
   t.partial({
     email: t.string,
     num_collection: t.Integer,
-    num_wantlist: t.Integer,
+    num_wantlist: t.Integer
   }),
   t.type({
     id: t.Integer,
@@ -83,6 +83,6 @@ export const UserIO = t.intersection([
     seller_rating: t.number,
     seller_rating_stars: t.Integer,
     seller_num_ratings: t.Integer,
-    curr_abbr: makeEnumIOType(CurrenciesEnum),
-  }),
+    curr_abbr: makeEnumIOType(CurrenciesEnum)
+  })
 ]);

@@ -12,7 +12,7 @@ export enum HTTPVerbsEnum {
   GET = 'GET',
   POST = 'POST',
   PUT = 'PUT',
-  DELETE = 'DELETE',
+  DELETE = 'DELETE'
 }
 
 /**
@@ -61,7 +61,7 @@ export function addQueryToUri(uri: string, query: Record<string, any>) {
 
     return {
       ...acc,
-      [key]: value,
+      [key]: value
     };
   }, {} as Record<string, any>);
   return `${uri}?${stringify(definedKeys)}`;
@@ -79,7 +79,7 @@ export function transformData(data: Record<string, any>) {
   return Object.entries(data).reduce(
     (acc, [key, value]) => ({
       ...acc,
-      [key === 'currency' ? 'curr_abbr' : key.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`)]: value,
+      [key === 'currency' ? 'curr_abbr' : key.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`)]: value
     }),
     {} as Record<string, any>
   );

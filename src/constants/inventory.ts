@@ -6,7 +6,7 @@ export enum InventoryStatusesEnum {
   FOR_SALE = 'For Sale',
   SOLD = 'Sold',
   SUSPENDED = 'Suspended',
-  VIOLATION = 'Violation',
+  VIOLATION = 'Violation'
 }
 
 export enum InventorySortEnum {
@@ -18,5 +18,5 @@ export enum InventorySortEnum {
   CATNO = 'catno',
   AUDIO = 'audio',
   STATUS = 'status',
-  LOCATION = 'location',
+  LOCATION = 'location'
 }

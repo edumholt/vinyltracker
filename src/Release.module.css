@@ -1,0 +1,14 @@
+.release {
+  width: 160px;
+  background-color: #eee;
+  justify-self: center;
+  margin: 8px;
+}
+
+.releaseImg {
+  border: 2px solid #999;
+  margin: 4px;
+  width: 120px;
+  height: 120px;
+  /* justify-self: center; */
+}
