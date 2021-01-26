@@ -9,10 +9,6 @@ import { Discojs } from './discojs';
 const dicsoOptions = {
   userAgent: '',
   userToken: process.env.REACT_APP_USER_TOKEN
-  // consumerKey: 'nUyuHThOuvnDpNAhKeDm',
-  // consumerSecret: 'UZpnsEHQsEKyFmLdQOUlDxJBFixoZgTH',
-  // oAuthToken: '',
-  // oAuthTokenSecret: '',
 };
 
 export const client = new Discojs(dicsoOptions);
