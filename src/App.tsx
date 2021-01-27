@@ -10,8 +10,6 @@ import './App.css';
 const dicsoOptions: DiscojsOptions = {
   userAgent: '',
   userToken: process.env.REACT_APP_USER_TOKEN
-  // consumerKey: 'nUyuHThOuvnDpNAhKeDm',
-  // consumerSecret: 'UZpnsEHQsEKyFmLdQOUlDxJBFixoZgTH',
   // oAuthToken: '',
   // oAuthTokenSecret: '',
 };
