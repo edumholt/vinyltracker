@@ -134,7 +134,7 @@ enum OutputFormatsEnum {
   // HTML = 'html',
 }
 
-interface DiscojsOptions extends Partial<UserTokenAuth>, Partial<ConsumerKeyAuth>, LimiterOptions {
+export interface DiscojsOptions extends Partial<UserTokenAuth>, Partial<ConsumerKeyAuth>, LimiterOptions {
   /**
    * User-agent to be used in requests.
    *
