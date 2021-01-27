@@ -1,13 +1,14 @@
 .app {
   text-align: center;
+  padding: 1rem 4rem;
 }
 
 .navbar {
-  margin: 12px 0;
-  border-radius: 12px;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
 }
 
 .nav-item {
   color: #eee;
-  margin: 0 12px;
+  margin: 0 0.5rem;
 }

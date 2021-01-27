@@ -53,13 +53,15 @@ export interface ReleaseProps {
   release: FolderRelease;
 }
 
-export const Release: React.FC<ReleaseProps> = (props) => {
+export const Release: React.FC<ReleaseProps> = props => {
   const { release } = props;
   return (
     <div className={styles.release}>
       <img className={styles.releaseImg} src={release.basic_information.thumb} alt={release.basic_information.title} />
       <h5>{release.basic_information.title}</h5>
+
       <p>{release.basic_information.artists[0].name}</p>
+      <p>{release.basic_information.year}</p>
     </div>
   );
 };

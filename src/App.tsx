@@ -5,14 +5,12 @@ import './App.css';
 import { Collection } from './Collection';
 import { UserProfileResponse } from './models';
 import { Discojs, DiscojsOptions } from './discojs';
+import Layout from './Layout';
+import Routes from './Routes';
 
 const dicsoOptions: DiscojsOptions = {
   userAgent: '',
   userToken: process.env.REACT_APP_USER_TOKEN
-  // consumerKey: 'nUyuHThOuvnDpNAhKeDm',
-  // consumerSecret: 'UZpnsEHQsEKyFmLdQOUlDxJBFixoZgTH',
-  // oAuthToken: '',
-  // oAuthTokenSecret: '',
 };
 
 export const client = new Discojs(dicsoOptions);
@@ -31,7 +29,7 @@ function App() {
 
   return (
     <Router>
-      <div className="app container">
+      <div className="app">
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <div className="navbar-nav">
             <NavLink to="/" className="nav-item">
@@ -49,11 +47,10 @@ function App() {
             <h4>Welcome to Discogs {profileData?.username}!</h4>
           </>
         )}
-        <Switch>
-          <Route path="/collection">
-            <Collection />
-          </Route>
-        </Switch>
+
+        <Layout>
+          <Routes />
+        </Layout>
       </div>
     </Router>
   );

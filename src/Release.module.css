@@ -1,14 +1,19 @@
 .release {
-  width: 160px;
+  width: 12rem;
   background-color: #eee;
   justify-self: center;
-  margin: 8px;
+  border: 0.125rem solid #999;
+  border-radius: 0.25rem;
+}
+
+.release p {
+  margin: 0.25rem;
 }
 
 .releaseImg {
-  border: 2px solid #999;
-  margin: 4px;
-  width: 120px;
-  height: 120px;
-  /* justify-self: center; */
+  border: 0.125rem solid #999;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0.25rem;
+  /* width: 120px;
+  height: 120px; */
 }
