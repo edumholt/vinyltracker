@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fluentui/react": "^7.157.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -16,6 +17,7 @@
     "cross-fetch": "^3.0.6",
     "eslint-config-prettier": "^7.2.0",
     "io-ts": "^2.2.13",
+    "lodash": "^4.17.20",
     "oauth-1.0a": "^2.2.6",
     "querystring": "^0.2.0",
     "react": "^17.0.1",
@@ -26,6 +28,7 @@
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.168",
     "prettier": "^2.2.1"
   },
   "scripts": {
