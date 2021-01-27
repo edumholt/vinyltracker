@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Collection } from './Collection';
+import { Collection } from './components/Collection/Collection';
 
 import Home from './Home';
 

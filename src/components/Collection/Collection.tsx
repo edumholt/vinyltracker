@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-import { Release } from './Release';
-import { client } from './App';
-import { FolderReleasesResponse } from './models';
+import { Release } from '../Release/Release';
+import { client } from '../../App';
+import { FolderReleasesResponse } from '../../discojs/models';
 
 import styles from './Collection.module.css';
-import { UserSortEnum } from './constants';
-import { SortOrdersEnum } from './utils';
+import { UserSortEnum } from '../../discojs/constants';
+import { SortOrdersEnum } from '../../discojs/utils';
 
 export type FolderReleases = FolderReleasesResponse['releases'];
 

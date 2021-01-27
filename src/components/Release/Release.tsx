@@ -53,13 +53,16 @@ export interface ReleaseProps {
   release: FolderRelease;
 }
 
+const handleReleaseClick = (target: React.MouseEvent) => {
+  console.log(target);
+};
+
 export const Release: React.FC<ReleaseProps> = props => {
   const { release } = props;
   return (
-    <div className={styles.release}>
+    <div className={styles.release} onClick={evt => handleReleaseClick(evt)}>
       <img className={styles.releaseImg} src={release.basic_information.thumb} alt={release.basic_information.title} />
       <h5>{release.basic_information.title}</h5>
-
       <p>{release.basic_information.artists[0].name}</p>
       <p>{release.basic_information.year}</p>
     </div>
