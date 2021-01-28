@@ -4,7 +4,7 @@ import get from 'lodash/get';
 
 import { TableDisplayModeProps, TableColumnProps } from './useTable.types';
 
-import styles from './SimpleTable.module.scss';
+import styles from './SimpleTable.module.css';
 
 /**
  * A Simple HTML Table - Minimal functionality is supported
