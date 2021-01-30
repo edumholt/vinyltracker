@@ -1,6 +1,25 @@
+main table {
+  font-size: 0.75rem;
+}
+
 .collection {
   display: grid;
   grid-auto-flow: dense;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   gap: 2em;
+}
+
+.sidebar {
+  background-color: #eee;
+  border: 0.125rem solid #999;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.releaseImg {
+  border: 0.125rem solid #999;
+  border-radius: 0.25rem;
+  margin: 0.25rem;
+  width: 2rem;
+  height: 2rem;
 }

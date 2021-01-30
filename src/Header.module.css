@@ -1,0 +1,12 @@
+.header {
+  margin: 1rem 0;
+}
+
+.navigation {
+  margin: 0.5rem;
+}
+
+.navbarSpacer {
+  flex-grow: 1;
+  width: calc(100vw - 26rem);
+}
